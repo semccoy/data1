@@ -86,7 +86,6 @@ public class FiniteSet {
             this.right = right;
         }
 
-        //wrong number of args?
         public BST empty() {
             return new EmptySet();
         }
@@ -99,78 +98,69 @@ public class FiniteSet {
             return false;
         }
 
-        //try doing this with if statements?
         public boolean member(int elt) {
-            if (left.member(elt) || node == elt || right.member(elt)) {
+            if (this.node == elt) {
                 return true;
+            } else if (this.node > elt) {
+                return left.member(elt);
             } else {
-                return false;
+                return right.member(elt);
             }
         }
 
         public BST add(int elt) {
-            if (elt < node) {
-                return new FullSet(elt, left.add(elt), right);
-            } else if (elt > node) {
-                return new FullSet(elt, left, right.add(elt));
-            } else {
+            if (this.node == elt) {
                 return this;
+            } else {
+                if (this.node > elt) {
+                    return new FullSet(node, left.add(elt), right);
+                } else {
+                    return new FullSet(node, left, right.add(elt));
+                }
             }
         }
 
-        //check this one in particular
-        //unions the left of THIS tree with UTREE's union of THIS right + node
-        //i hope
         public BST union(BST u) {
-            return this.left.union(u.union(this.right).add(this.node));
+            return this.left.union(u.union(right).add(this.node));
         }
 
         public BST remove(int elt) {
-            if (elt < node) {
-                return new FullSet(elt, left.remove(elt), right);
-            } else if (elt > node) {
-                return new FullSet(elt, left, right.remove(elt));
+            if (node == elt) {
+                return right.union(left);
+            } else if (node > elt) {
+                return new FullSet(node, left, right.remove(elt));
             } else {
-                return left.union(right);
+                return new FullSet(node, left.remove(elt), right);
             }
         }
 
         public BST inter(BST u) {
-            //u is in the set
+            //if in the set, put in inter
             if (u.member(node)) {
-                return new FullSet(node, left.inter(u), right.inter(u));
-            } //u isnt in the set
+                return new FullSet(node, this.left.inter(u), this.right.inter(u));
+            } //if not in the set, remove node from inter
             else {
-                return left.inter(u).union(right.inter(u));
+                return this.remove(node).inter(u);
             }
         }
 
-        //check this with jay
-        //is the purpose of diff supposed to be to return everything not
-        //in the dashed region below? or to return just the dotted region?
-        // http://puu.sh/bDy92.png
         public BST diff(BST u) {
+            //returns things different between existing BST and u
+            //so if is a member, we want to remove it
             if (u.member(node)) {
-                return left.diff(u).union(right.diff(u));
-            } else {
-                return new FullSet(node, left.diff(u), right.diff(u));
+                return this.left.union(this.right).diff(u.remove(this.node));
+            } //and if not, we don't need to remove it
+            else {
+                return this.left.union(this.right).diff(u);
             }
         }
 
         public boolean subset(BST u) {
-            if (left.subset(u) && u.member(node) && right.subset(u)) {
-                return true;
-            } else {
-                return false;
-            }
+            return (left.subset(u) && u.member(node) && right.subset(u));
         }
 
         public boolean equal(BST u) {
-            if (this.subset(u) && u.subset(this)) {
-                return true;
-            } else {
-                return false;
-            }
+            return (this.subset(u) && u.subset(this));
         }
     }
 
@@ -257,12 +247,11 @@ public class FiniteSet {
         System.out.println("\n\n");
         System.out.println("union:");
         System.out.println(MT.union(MT).isEmptyHuh() + " should be " + true);
-        System.out.println(MT.union(t4).isEmptyHuh() + " should be " + false);
+        System.out.println(MT.union(t678).isEmptyHuh() + " should be " + false);
         System.out.println(MT.union(t4).cardinality() + " should be " + 1);
         System.out.println(t5.union(t4).cardinality() + " should be " + 2);
         System.out.println(t6.union(t67).cardinality() + " should be " + 2);
         System.out.println(t678.union(t678).cardinality() + " should be " + 2);
-        // why do three of these fail???
         System.out.println(t5.union(t7).union(t9).cardinality() + " should be " + 3);
         System.out.println(t5.union(t9).union(t7).cardinality() + " should be " + 3);
         System.out.println(t7.union(t5).union(t9).cardinality() + " should be " + 3);
@@ -281,7 +270,6 @@ public class FiniteSet {
         System.out.println(tlots.inter(t678).cardinality() + " should be " + 3);
         System.out.println("\n\n");
 
-        
         //not right, see above declaration
         System.out.println("diff:");
         System.out.println(MT.diff(MT).cardinality() + " should be " + 0);
@@ -289,10 +277,12 @@ public class FiniteSet {
         System.out.println(t7.diff(MT).cardinality() + " should be " + 0);
         System.out.println(t7.diff(t6).cardinality() + " should be " + 1);
         System.out.println(t5.diff(t5).cardinality() + " should be " + 0);
-        System.out.println(t67.diff(t78).cardinality() + " should be " + 2);
-        System.out.println(t678.diff(t6).cardinality() + " should be " + 1);
-        System.out.println(t6.diff(t678).cardinality() + " should be " + 1);
+        System.out.println(t67.diff(t78).cardinality() + " should be " + 1);
+        System.out.println(t678.diff(t67).cardinality() + " should be " + 0);
+        System.out.println(t6.diff(t678).cardinality() + " should be " + 3);
+        System.out.println(t67.diff(t678).cardinality() + " should be " + 1);
         System.out.println(tlots.diff(t8).cardinality() + " should be " + 0);
+        System.out.println(t8.diff(tlots).cardinality() + " should be " + 7);
         System.out.println("\n\n");
 
         System.out.println("equal:");
