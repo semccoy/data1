@@ -32,6 +32,10 @@ public class FiniteSet {
         EmptySet() {
         }
 
+        public static BST empty() {
+            return new EmptySet();
+        }
+
         public int cardinality() {
             return 0;
         }
@@ -86,7 +90,7 @@ public class FiniteSet {
             this.right = right;
         }
 
-        public BST empty() {
+        public static BST empty() {
             return new EmptySet();
         }
 
@@ -164,146 +168,223 @@ public class FiniteSet {
         }
     }
 
-    ///// c/o ben slaw
-    Random r = new Random();
-
-    public int rInt(int low, int high) {
-        return r.nextInt((high - low) + 1) + low;
+    /* Random Stuff */
+    public static int randInt(int min, int max) {
+        Random rand = new Random();
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+        return randomNum;
     }
 
-    public BST rBST(BST theBST, int lengthBST) {
-        if (lengthBST == 0) {
-            return theBST;
+    public static BST createBST(int size) {
+        if (size == 0) {
+            return FullSet.empty();
         } else {
-            int theInt = rInt(0, 100);
-            if (!theBST.member(theInt)) {
-                return rBST(theBST.add(theInt), lengthBST - 1);
-            } else {
-                return rBST(theBST, lengthBST);
-            }
+            return createBST(size - 1).add(randInt(0, 50));
         }
     }
 
-    /////
-    public static void main(String[] args) {
-
-        /// BASIC TESTS
-        BST MT = new EmptySet();
-        BST t4 = new FullSet(4, MT, MT);
-        BST t5 = new FullSet(5, MT, MT);
-        BST t6 = new FullSet(6, MT, MT);
-        BST t7 = new FullSet(7, MT, MT);
-        BST t8 = new FullSet(8, MT, MT);
-        BST t9 = new FullSet(9, MT, MT);
-        BST t10 = new FullSet(10, MT, MT);
-        BST t67 = new FullSet(7, t6, MT);
-        BST t78 = new FullSet(7, MT, t8);
-        BST t678 = new FullSet(7, t6, t8);
-        BST t5678 = new FullSet(7, new FullSet(6, t5, MT), t8);
-        BST t56789 = new FullSet(7, new FullSet(6, t5, MT), new FullSet(8, MT, t9));
-        BST tlots = new FullSet(7, new FullSet(5, t4, t6), new FullSet(9, t8, t10));
-
-        System.out.println("\n\n");
-        System.out.println("cardinality:");
-        System.out.println(MT.cardinality() + " should be " + 0);
-        System.out.println(t5.cardinality() + " should be " + 1);
-        System.out.println(t67.cardinality() + " should be " + 2);
-        System.out.println(tlots.cardinality() + " should be " + 7);
-
-        System.out.println("\n\n");
-        System.out.println("isEmptyHuh:");
-        System.out.println(MT.isEmptyHuh() + " should be " + true);
-        System.out.println(t5.isEmptyHuh() + " should be " + false);
-        System.out.println(t67.isEmptyHuh() + " should be " + false);
-        System.out.println(tlots.isEmptyHuh() + " should be " + false);
-
-        System.out.println("\n\n");
-        System.out.println("member:");
-        System.out.println(MT.member(5) + " should be " + false);
-        System.out.println(t5.member(5) + " should be " + true);
-        System.out.println(t5.member(6) + " should be " + false);
-        System.out.println(t67.member(6) + " should be " + true);
-        System.out.println(t67.member(7) + " should be " + true);
-        System.out.println(tlots.member(10) + " should be " + true);
-        System.out.println(tlots.member(11) + " should be " + false);
-
-        System.out.println("\n\n");
-        System.out.println("add:");
-        System.out.println(MT.add(0).cardinality() + " should be " + 1);
-        System.out.println(t5.add(5).cardinality() + " should be " + 1);
-        System.out.println(t5.add(6).cardinality() + " should be " + 2);
-        System.out.println(t67.add(5).cardinality() + " should be " + 3);
-        System.out.println(t678.add(5).cardinality() + " should be " + 4);
-        System.out.println(tlots.add(42).cardinality() + " should be " + 8);
-
-        System.out.println("\n\n");
-        System.out.println("remove:");
-        System.out.println(MT.remove(42).cardinality() + " should be " + 0);
-        System.out.println(t5.remove(5).cardinality() + " should be " + 0);
-        System.out.println(t67.remove(6).cardinality() + " should be " + 1);
-        System.out.println(t678.remove(7).cardinality() + " should be " + 2);
-        System.out.println(tlots.remove(8).cardinality() + " should be " + 6);
-
-        System.out.println("\n\n");
-        System.out.println("union:");
-        System.out.println(MT.union(MT).isEmptyHuh() + " should be " + true);
-        System.out.println(MT.union(t678).isEmptyHuh() + " should be " + false);
-        System.out.println(MT.union(t4).cardinality() + " should be " + 1);
-        System.out.println(t5.union(t4).cardinality() + " should be " + 2);
-        System.out.println(t6.union(t67).cardinality() + " should be " + 2);
-        System.out.println(t678.union(t678).cardinality() + " should be " + 2);
-        System.out.println(t5.union(t7).union(t9).cardinality() + " should be " + 3);
-        System.out.println(t5.union(t9).union(t7).cardinality() + " should be " + 3);
-        System.out.println(t7.union(t5).union(t9).cardinality() + " should be " + 3);
-        System.out.println(t7.union(t9).union(t5).cardinality() + " should be " + 3);
-        System.out.println(t9.union(t5).union(t7).cardinality() + " should be " + 3);
-        System.out.println(t9.union(t7).union(t5).cardinality() + " should be " + 3);
-
-        System.out.println("\n\n");
-        System.out.println("inter:");
-        System.out.println(MT.inter(MT).cardinality() + " should be " + 0);
-        System.out.println(MT.inter(t5).cardinality() + " should be " + 0);
-        System.out.println(t5.inter(t4).cardinality() + " should be " + 0);
-        System.out.println(t5.inter(t5).cardinality() + " should be " + 1);
-        System.out.println(t678.inter(t6).cardinality() + " should be " + 1);
-        System.out.println(t6.inter(MT).cardinality() + " should be " + 0);
-        System.out.println(tlots.inter(t678).cardinality() + " should be " + 3);
-        System.out.println("\n\n");
-
-        //not right, see above declaration
-        System.out.println("diff:");
-        System.out.println(MT.diff(MT).cardinality() + " should be " + 0);
-        System.out.println(MT.diff(t7).cardinality() + " should be " + 1);
-        System.out.println(t7.diff(MT).cardinality() + " should be " + 0);
-        System.out.println(t7.diff(t6).cardinality() + " should be " + 1);
-        System.out.println(t5.diff(t5).cardinality() + " should be " + 0);
-        System.out.println(t67.diff(t78).cardinality() + " should be " + 1);
-        System.out.println(t678.diff(t67).cardinality() + " should be " + 0);
-        System.out.println(t6.diff(t678).cardinality() + " should be " + 3);
-        System.out.println(t67.diff(t678).cardinality() + " should be " + 1);
-        System.out.println(tlots.diff(t8).cardinality() + " should be " + 0);
-        System.out.println(t8.diff(tlots).cardinality() + " should be " + 7);
-        System.out.println("\n\n");
-
-        System.out.println("equal:");
-        System.out.println(MT.equal(MT) + " should be " + true);
-        System.out.println(t5.equal(t4) + " should be " + false);
-        System.out.println(t6.equal(t6) + " should be " + true);
-        System.out.println(t78.equal(t67) + " should be " + false);
-        System.out.println(t678.equal(tlots) + " should be " + false);
-        System.out.println(t678.equal(t678) + " should be " + true);
-        System.out.println("\n\n");
-
-        System.out.println("subset:");
-        System.out.println(MT.subset(MT) + " should be " + true);
-        System.out.println(t7.subset(MT) + " should be " + false);
-        System.out.println(t7.subset(t7) + " should be " + true);
-        System.out.println(t67.subset(t6) + " should be " + false);
-        System.out.println(t678.subset(t6) + " should be " + false);
-        System.out.println(t6.subset(t678) + " should be " + true);
-        System.out.println(tlots.subset(t678) + " should be " + false);
-        System.out.println("\n\n");
-
+    /* Testing */
+    //
+    //all operations checked at least once (most twice or more)
+    //
+    //fyi, i didn't check empty() anywhere since i feel like you can
+    //check isEmptyHuh() and get the same result...
+    //
+    //
+    //
+    //if cardinality is 0, u must be empty; if not, u must not be empty
+    public static void isEmptyHuhCardCheck(BST u) {
+        if (u.cardinality() == 0) {
+            if (u.isEmptyHuh()) {
+                System.out.println("Success - isEmptyHuhCardCheck");
+            } else {
+                System.out.println("Failure - isEmptyHuhCardCheck");
+            }
+        } else if (!u.isEmptyHuh()) {
+            System.out.println("Success - isEmptyHuhCardCheck");
+        } else {
+            System.out.println("Failure - isEmptyHuhCardCheck");
+        }
     }
 
+    //adding things makes cardinality go up by however many things were added
+    public static void cardAddCheck(int elt) {
+        BST tree = new EmptySet();
+        for (int i = 0; i < elt; i++) {
+            tree = tree.add(i);
+        }
+        if (tree.cardinality() == elt) {
+            System.out.println("Success - cardAddCheck");
+        } else {
+            System.out.println("Failure - cardAddCheck");
+        }
+    }
+
+    //removing an elt from u results in a <= cardinality
+    public static void removeCardCheck(BST u) {
+        int elt = randInt(0, 100);
+        BST smaller = u.remove(elt);
+        if (smaller.cardinality() <= u.cardinality()) {
+            System.out.println("Success - removeCardCheck");
+        } else {
+            System.out.println("Failure - removeCardCheck");
+        }
+    }
+
+    //if some number is not in one set but in another that's just
+    //the first set + the number, adding things to sets works properly!
+    //note that x MUST be outside the range of possible values of u
+    //else may fail
+    public static void addMemberCheck(BST u) {
+        int x = randInt(4200, 4300);
+        BST uPlus = u.add(x);
+        if (!u.member(x) && uPlus.member(x)) {
+            System.out.println("Success - addMemberCheck");
+        } else {
+            System.out.println("Failure - addMemberCheck");
+        }
+    }
+
+    //unions of (sub)sets are transitive
+    public static void unionSubsetCheck(BST u, BST v, BST w) {
+        if ((u.union(v)).subset(w)
+                == (u.subset(w) && v.subset(w))) {
+            System.out.println("Success - unionSubsetCheck");
+        } else {
+            System.out.println("Failure - unionSubsetCheck");
+        }
+    }
+
+    //adding things to sets is transitive
+    public static void unionMemberCheck(BST u, BST v) {
+        int elt = randInt(0, 100);
+        BST s1 = u.add(elt);
+        BST s2 = v.add(elt);
+        BST x1 = (s1.union(v));
+        BST x2 = (s2.union(u));
+        if (x1.member(elt) && x2.member(elt)) {
+            System.out.println("Success - unionMemberCheck");
+        } else {
+            System.out.println("Failure - unionMemberCheck");
+        }
+    }
+
+    //the intersection of 2 sets cannot be empty if 
+    //both of those 2 sets contain the thing
+    public static void memberInterCheck(BST u, BST v, int elt) {
+        u = u.add(elt);
+        v = v.add(elt);
+        if (u.member(elt) && v.member(elt)) {
+            if (!u.inter(v).isEmptyHuh()) {
+                System.out.println("Success - memberInterCheck");
+            } else {
+                System.out.println("Failure - memberInterCheck");
+            }
+        } else {
+            System.out.println("Can't touch this");
+        }
+    }
+
+    //four things:
+    //1 - if the difference between 2 sets is empty, they are equal
+    //2 - if 2 sets are different, they are not equal
+    //3 - and vice versa
+    //4 -  " " 
+    public static void diffEqualCheck(BST u, BST v) {
+        if ((u.diff(v)).isEmptyHuh() && (v.diff(u)).isEmptyHuh()) {
+            if (u.equal(v)) {
+                System.out.println("Success - diffEqualCheck pt1");
+            } else {
+                System.out.println("Failure - diffEqualCheck pt1");
+            }
+        } else if (!u.equal(v)) {
+            System.out.println("Success - diffEqualCheck pt1.2");
+        } else {
+            System.out.println("Failure - diffEqualCheck pt1.2");
+        }
+        //vice versa
+        if (u.equal(v)) {
+            if (u.diff(v).isEmptyHuh() && v.diff(u).isEmptyHuh()) {
+                System.out.println("Success - diffEqualCheck pt2");
+            } else {
+                System.out.println("Failure - diffEqualCheck pt2");
+            }
+        } else if (!u.diff(v).isEmptyHuh()
+                || !v.diff(u).isEmptyHuh()) {
+            System.out.println("Success - diffEqualCheck pt2.2");
+        } else {
+            System.out.println("Failure - diffEqualCheck pt2.2");
+        }
+    }
+
+    //union of sets check
+    public static void interUnionCheck(BST u, BST v, BST w) {
+        BST t1 = u.union(v);
+        BST t2 = v.union(w);
+        BST t3 = u.union(v).union(w);
+        if (true) {
+            System.out.println("Success - unionMemberCheck");
+        } else {
+            System.out.println("Failure - unionMemberCheck");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("random int checker - " + randInt(0, 100) + " " + randInt(0, 100) + " " + randInt(0, 100));
+
+        BST mt = new EmptySet();
+        BST bst0 = createBST(1);
+        BST bst6 = createBST(7);
+
+        int adNauseum = 10; //repeats all tests this many times
+        for (int i = 0; i < adNauseum; i++) {
+
+            System.out.println("\nemptyCardCheck:");
+            isEmptyHuhCardCheck(mt);
+            isEmptyHuhCardCheck(bst0);
+            isEmptyHuhCardCheck(bst6);
+            isEmptyHuhCardCheck(createBST(randInt(0, 10)));
+            isEmptyHuhCardCheck(createBST(randInt(0, 10)));
+            isEmptyHuhCardCheck(createBST(randInt(0, 10)));
+
+            System.out.println("\ncardAddCheck:");
+            cardAddCheck(0);
+            cardAddCheck(5);
+            cardAddCheck(randInt(0, 100));
+            cardAddCheck(randInt(0, 100));
+            cardAddCheck(randInt(0, 100));
+
+            System.out.println("\nremoveCardCheck:");
+            removeCardCheck(createBST(randInt(0, 10)));
+            removeCardCheck(createBST(randInt(0, 10)));
+            removeCardCheck(createBST(randInt(0, 10)));
+
+            System.out.println("\naddMemberCheck:");
+            addMemberCheck(createBST(randInt(0, 10)));
+            addMemberCheck(createBST(randInt(0, 10)));
+            addMemberCheck(createBST(randInt(0, 10)));
+
+            System.out.println("\nunionSubsetCheck:");
+            unionSubsetCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+            unionSubsetCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+            unionSubsetCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+
+            System.out.println("\nunionMemberCheck:");
+            unionMemberCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+            unionMemberCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+            unionMemberCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+
+            System.out.println("\nmemberInterCheck:");
+            memberInterCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)), randInt(0, 100));
+            memberInterCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)), randInt(0, 100));
+            memberInterCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)), randInt(0, 100));
+
+            System.out.println("\ndiffEqualCheck:");
+            diffEqualCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+            diffEqualCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+            diffEqualCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+
+        }
+    }
 }
