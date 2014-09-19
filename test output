@@ -1,0 +1,533 @@
+run:
+random int checker - 0 69 76
+
+emptyCardCheck:
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+
+cardAddCheck:
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+
+removeCardCheck:
+Success - removeCardCheck
+Success - removeCardCheck
+Success - removeCardCheck
+
+addMemberCheck:
+Success - addMemberCheck
+Success - addMemberCheck
+Success - addMemberCheck
+
+unionSubsetCheck:
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+
+unionMemberCheck:
+Success - unionMemberCheck
+Success - unionMemberCheck
+Success - unionMemberCheck
+
+memberInterCheck:
+Success - memberInterCheck
+Success - memberInterCheck
+Success - memberInterCheck
+
+diffEqualCheck:
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+
+addUnionRemoveInterEqualCheck:
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+
+emptyCardCheck:
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+
+cardAddCheck:
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+
+removeCardCheck:
+Success - removeCardCheck
+Success - removeCardCheck
+Success - removeCardCheck
+
+addMemberCheck:
+Success - addMemberCheck
+Success - addMemberCheck
+Success - addMemberCheck
+
+unionSubsetCheck:
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+
+unionMemberCheck:
+Success - unionMemberCheck
+Success - unionMemberCheck
+Success - unionMemberCheck
+
+memberInterCheck:
+Success - memberInterCheck
+Success - memberInterCheck
+Success - memberInterCheck
+
+diffEqualCheck:
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+
+addUnionRemoveInterEqualCheck:
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+
+emptyCardCheck:
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+
+cardAddCheck:
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+
+removeCardCheck:
+Success - removeCardCheck
+Success - removeCardCheck
+Success - removeCardCheck
+
+addMemberCheck:
+Success - addMemberCheck
+Success - addMemberCheck
+Success - addMemberCheck
+
+unionSubsetCheck:
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+
+unionMemberCheck:
+Success - unionMemberCheck
+Success - unionMemberCheck
+Success - unionMemberCheck
+
+memberInterCheck:
+Success - memberInterCheck
+Success - memberInterCheck
+Success - memberInterCheck
+
+diffEqualCheck:
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+
+addUnionRemoveInterEqualCheck:
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+
+emptyCardCheck:
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+
+cardAddCheck:
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+
+removeCardCheck:
+Success - removeCardCheck
+Success - removeCardCheck
+Success - removeCardCheck
+
+addMemberCheck:
+Success - addMemberCheck
+Success - addMemberCheck
+Success - addMemberCheck
+
+unionSubsetCheck:
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+
+unionMemberCheck:
+Success - unionMemberCheck
+Success - unionMemberCheck
+Success - unionMemberCheck
+
+memberInterCheck:
+Success - memberInterCheck
+Success - memberInterCheck
+Success - memberInterCheck
+
+diffEqualCheck:
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+
+addUnionRemoveInterEqualCheck:
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+
+emptyCardCheck:
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+
+cardAddCheck:
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+
+removeCardCheck:
+Success - removeCardCheck
+Success - removeCardCheck
+Success - removeCardCheck
+
+addMemberCheck:
+Success - addMemberCheck
+Success - addMemberCheck
+Success - addMemberCheck
+
+unionSubsetCheck:
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+
+unionMemberCheck:
+Success - unionMemberCheck
+Success - unionMemberCheck
+Success - unionMemberCheck
+
+memberInterCheck:
+Success - memberInterCheck
+Success - memberInterCheck
+Success - memberInterCheck
+
+diffEqualCheck:
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+
+addUnionRemoveInterEqualCheck:
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+
+emptyCardCheck:
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+
+cardAddCheck:
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+
+removeCardCheck:
+Success - removeCardCheck
+Success - removeCardCheck
+Success - removeCardCheck
+
+addMemberCheck:
+Success - addMemberCheck
+Success - addMemberCheck
+Success - addMemberCheck
+
+unionSubsetCheck:
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+
+unionMemberCheck:
+Success - unionMemberCheck
+Success - unionMemberCheck
+Success - unionMemberCheck
+
+memberInterCheck:
+Success - memberInterCheck
+Success - memberInterCheck
+Success - memberInterCheck
+
+diffEqualCheck:
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+
+addUnionRemoveInterEqualCheck:
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+
+emptyCardCheck:
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+
+cardAddCheck:
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+
+removeCardCheck:
+Success - removeCardCheck
+Success - removeCardCheck
+Success - removeCardCheck
+
+addMemberCheck:
+Success - addMemberCheck
+Success - addMemberCheck
+Success - addMemberCheck
+
+unionSubsetCheck:
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+
+unionMemberCheck:
+Success - unionMemberCheck
+Success - unionMemberCheck
+Success - unionMemberCheck
+
+memberInterCheck:
+Success - memberInterCheck
+Success - memberInterCheck
+Success - memberInterCheck
+
+diffEqualCheck:
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+
+addUnionRemoveInterEqualCheck:
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+
+emptyCardCheck:
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+
+cardAddCheck:
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+
+removeCardCheck:
+Success - removeCardCheck
+Success - removeCardCheck
+Success - removeCardCheck
+
+addMemberCheck:
+Success - addMemberCheck
+Success - addMemberCheck
+Success - addMemberCheck
+
+unionSubsetCheck:
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+
+unionMemberCheck:
+Success - unionMemberCheck
+Success - unionMemberCheck
+Success - unionMemberCheck
+
+memberInterCheck:
+Success - memberInterCheck
+Success - memberInterCheck
+Success - memberInterCheck
+
+diffEqualCheck:
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+
+addUnionRemoveInterEqualCheck:
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+
+emptyCardCheck:
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+
+cardAddCheck:
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+
+removeCardCheck:
+Success - removeCardCheck
+Success - removeCardCheck
+Success - removeCardCheck
+
+addMemberCheck:
+Success - addMemberCheck
+Success - addMemberCheck
+Success - addMemberCheck
+
+unionSubsetCheck:
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+
+unionMemberCheck:
+Success - unionMemberCheck
+Success - unionMemberCheck
+Success - unionMemberCheck
+
+memberInterCheck:
+Success - memberInterCheck
+Success - memberInterCheck
+Success - memberInterCheck
+
+diffEqualCheck:
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+
+addUnionRemoveInterEqualCheck:
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+
+emptyCardCheck:
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+Success - isEmptyHuhCardCheck
+
+cardAddCheck:
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+Success - cardAddCheck
+
+removeCardCheck:
+Success - removeCardCheck
+Success - removeCardCheck
+Success - removeCardCheck
+
+addMemberCheck:
+Success - addMemberCheck
+Success - addMemberCheck
+Success - addMemberCheck
+
+unionSubsetCheck:
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+Success - unionSubsetCheck
+
+unionMemberCheck:
+Success - unionMemberCheck
+Success - unionMemberCheck
+Success - unionMemberCheck
+
+memberInterCheck:
+Success - memberInterCheck
+Success - memberInterCheck
+Success - memberInterCheck
+
+diffEqualCheck:
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+Success - diffEqualCheck pt1.2
+Success - diffEqualCheck pt2.2
+
+addUnionRemoveInterEqualCheck:
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+Success - addUnionRemoveInterEqualCheck
+BUILD SUCCESSFUL (total time: 0 seconds)

@@ -317,15 +317,27 @@ public class FiniteSet {
         }
     }
 
-    //union of sets check
-    public static void interUnionCheck(BST u, BST v, BST w) {
-        BST t1 = u.union(v);
-        BST t2 = v.union(w);
-        BST t3 = u.union(v).union(w);
-        if (true) {
-            System.out.println("Success - unionMemberCheck");
+    //add one thing that is to u and v that is either
+    //already within or outside of both of them to being with, then if:
+    //unioning them = u + v + elt,
+    //removing elt from them = u + v,
+    //interesting them = elt,
+    //unioning elt and u + v = u + v + elt
+    //and the union of the intersects of the original sets = u + v + elt,
+    //then all the u + v + elt sets are equal
+    public static void addUnionRemoveInterEqualCheck(BST u, BST v) {
+        int elt = randInt(0, 200);
+        BST u2 = u.add(elt);
+        BST v2 = v.add(elt);
+        BST unionSet = u2.union(v2); // u + v + elt
+        BST removeSet = unionSet.remove(elt); // u + v
+        BST interSet = u2.inter(v2); // elt
+        BST connectSet = removeSet.union(interSet); // u + v + elt
+        BST uiSet = interSet.union(u).union(v); // u + v + elt
+        if (unionSet.equal(uiSet) && unionSet.equal(connectSet)) { // all equal
+            System.out.println("Success - addUnionRemoveInterEqualCheck");
         } else {
-            System.out.println("Failure - unionMemberCheck");
+            System.out.println("Failure - addUnionRemoveInterEqualCheck");
         }
     }
 
@@ -384,6 +396,11 @@ public class FiniteSet {
             diffEqualCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
             diffEqualCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
             diffEqualCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+
+            System.out.println("\naddUnionRemoveInterEqualCheck:");
+            addUnionRemoveInterEqualCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+            addUnionRemoveInterEqualCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
+            addUnionRemoveInterEqualCheck(createBST(randInt(0, 10)), createBST(randInt(0, 10)));
 
         }
     }
